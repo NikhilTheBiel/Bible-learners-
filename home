@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bible Learning Community</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to the Bible Learning Community</h1>
+    <p>Explore, learn, and share insights from the Bible with others!</p>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#posts">Community Posts</a>
+      <a href="#resources">Resources</a>
+      <a href="#login">Login</a>
+    </nav>
+  </header>
+  
+  <main>
+    <section id="home">
+      <h2>About This Site</h2>
+      <p>This is a community-driven website where everyone can share their insights on the Bible and discuss together.</p>
+    </section>
+    
+    <section id="posts">
+      <h2>Community Posts</h2>
+      <div id="post-list">
+        <!-- Posts will be dynamically loaded here -->
+      </div>
+      <button onclick="showPostForm()">Share Your Insight</button>
+    </section>
+    
+    <section id="resources">
+      <h2>Bible Study Resources</h2>
+      <p>Check out these helpful links:</p>
+      <ul>
+        <li><a href="https://www.biblegateway.com/">Bible Gateway</a></li>
+        <li><a href="https://www.bible.com/">YouVersion Bible</a></li>
+        <!-- More resources can go here -->
+      </ul>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 Bible Learning Community. All rights reserved.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
