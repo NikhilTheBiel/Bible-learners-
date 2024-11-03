@@ -3,48 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="favicon.png"> 
   <title>Bible Learning Community</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Header with Navigation Menu -->
   <header>
-    <h1>Welcome to the Bible Learning Community</h1>
-    <p>Explore, learn, and share insights from the Bible with others!</p>
+    <h1>Bible Learning Community</h1>
     <nav>
-      <a href="#home">Home</a>
-      <a href="#posts">Community Posts</a>
-      <a href="#resources">Resources</a>
-      <a href="#login">Login</a>
+      <a href="#left-section">Community Posts</a>
+      <a href="#center-section">Bible Verses</a>
+      <a href="#right-section">Helpful Links</a>
+      <a href="#footer">Contact Us</a>
     </nav>
   </header>
-  
-  <main>
-    <section id="home">
-      <h2>About This Site</h2>
-      <p>This is a community-driven website where everyone can share their insights on the Bible and discuss together.</p>
-    </section>
-    
-    <section id="posts">
+
+  <!-- Main Content Layout -->
+  <div class="container">
+    <!-- Left Section: Community Posts with Background Image -->
+    <section id="left-section" style="background-image: url('images/community.jpg'); background-size: cover;">
       <h2>Community Posts</h2>
       <div id="post-list">
-        <!-- Posts will be dynamically loaded here -->
+
+        <!-- Dynamic posts will load here -->
       </div>
       <button onclick="showPostForm()">Share Your Insight</button>
+      <title>Audio Upload</title>
+    </head>
+    <body>
+        <h1>Upload Your Audio File</h1>
+        <form id="audio-upload-form" action="upload.php" method="POST" enctype="multipart/form-data">
+            <label for="audioFile">Choose an audio file:</label>
+            <input type="file" id="audioFile" name="audioFile" accept="audio/*" required>
+            <button type="submit">Upload</button>
+        </form>
+    
+        <div id="message"></div>
+    
+        <script>
+            // Optional: JavaScript to handle form submission and display a message
+            const form = document.getElementById('audio-upload-form');
+            const messageDiv = document.getElementById('message');
+    
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+    
+                const formData = new FormData(form);
+                // Make an AJAX request to upload the file (you'll need to create upload.php)
+                fetch('upload.php', {
+                    method: 'POST',
+                    body: formData,
+                })
+                .then(response => response.text())
+                .then(data => {
+                    messageDiv.textContent = 'Upload successful: ' + data;
+                })
+                .catch(error => {
+                    messageDiv.textContent = 'Upload failed: ' + error.message;
+                });
+            });
+        </script>
+    
     </section>
     
-    <section id="resources">
-      <h2>Bible Study Resources</h2>
-      <p>Check out these helpful links:</p>
+
+    <!-- Center Section: Bible Verses with Nature Image -->
+    <section id="center-section" style="background-image: url('images/sunrise.jpg'); background-size: cover;">
+      <h2>Bible Verses</h2>
+      <div class="verse">
+        <p><strong>John 3:16:</strong> "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life."</p>
+      </div>
+      <div class="verse">
+        <p><strong>Psalm 23:1:</strong> "The Lord is my shepherd; I shall not want."</p>
+      </div>
+      <div class="verse">
+        <p><strong>Philippians 4:13:</strong> "I can do all things through Christ who strengthens me."</p>
+      </div>
+    </section>
+
+    <!-- Right Section: Helpful Links with Icons -->
+    <section id="right-section">
+      <h2>Helpful Links</h2>
       <ul>
-        <li><a href="https://www.biblegateway.com/">Bible Gateway</a></li>
-        <li><a href="https://www.bible.com/">YouVersion Bible</a></li>
-        <!-- More resources can go here -->
+        <li><img src="C:\Users\THANUJA\Pictures\istockphoto-912149646-612x6121.jpg" alt="Bible icon"><a href="https://www.biblegateway.com/" target="_blank">Bible Gateway</a></li>
+        <li><img src="C:\Users\THANUJA\Pictures\22633-2001.png" alt="Book icon"><a href="https://www.bible.com/" target="_blank">YouVersion Bible</a></li>
+        <li><img src="C:\Users\THANUJA\Pictures\depositphotos_395602550-stock-illustration-bible-book-icon-vector-illustration1.png" alt="Computer icon"><a href="https://www.biblestudytools.com/" target="_blank">Bible Study Tools</a></li>
+        <p style="font-family:verdana"><b> Go to this link to get telugu songs --> <sub><a href="https://christianlyricz.com/"> Telugu/English songs </a></sub></a>.</b></p>
       </ul>
     </section>
-  </main>
-  
-  <footer>
-    <p>&copy; 2023 Bible Learning Community. All rights reserved.</p>
+  </div>
+
+  <!-- Footer with Contact Us Button -->
+  <footer id="footer">
+    <p>&copy; 2023 Bible Learning Community</p>
+    <button onclick="contactUs()">Contact Us</button>
   </footer>
 
   <script src="app.js"></script>
