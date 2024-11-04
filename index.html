@@ -29,42 +29,26 @@
         <!-- Dynamic posts will load here -->
       </div>
       <button onclick="showPostForm()">Share Your Insight</button>
-      <title>Audio Upload</title>
-    </head>
-    <body>
-        <h1>Upload Your Audio File</h1>
-        <form id="audio-upload-form" action="upload.php" method="POST" enctype="multipart/form-data">
-            <label for="audioFile">Choose an audio file:</label>
-            <input type="file" id="audioFile" name="audioFile" accept="audio/*" required>
-            <button type="submit">Upload</button>
-        </form>
+      <title>User Testimonies</title>
+    <link rel="stylesheet" href="stylee.css">
+</head>
+<body>
+    <h1>User Testimonies</h1>
     
-        <div id="message"></div>
+    <button id="testimonyButton">Write Your Testimony</button>
     
-        <script>
-            // Optional: JavaScript to handle form submission and display a message
-            const form = document.getElementById('audio-upload-form');
-            const messageDiv = document.getElementById('message');
+    <div id="testimonyForm" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Write Your Testimony</h2>
+            <textarea id="testimonyInput" rows="4" placeholder="Type your testimony here..."></textarea>
+            <button id="submitTestimony">Submit</button>
+        </div>
+    </div>
     
-            form.addEventListener('submit', function(event) {
-                event.preventDefault(); // Prevent default form submission
-    
-                const formData = new FormData(form);
-                // Make an AJAX request to upload the file (you'll need to create upload.php)
-                fetch('upload.php', {
-                    method: 'POST',
-                    body: formData,
-                })
-                .then(response => response.text())
-                .then(data => {
-                    messageDiv.textContent = 'Upload successful: ' + data;
-                })
-                .catch(error => {
-                    messageDiv.textContent = 'Upload failed: ' + error.message;
-                });
-            });
-        </script>
-    
+    <div id="testimonyList"></div>
+
+    <script src="script.js"></script>
     </section>
     
 
