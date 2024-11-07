@@ -6,7 +6,6 @@ body {
   background-color: #f4f4f9;
 }
 
-/* Header and Navigation */
 header {
   background-color: #3c3b6e;
   color: #fff;
@@ -14,22 +13,6 @@ header {
   text-align: center;
 }
 
-nav {
-  margin-top: 0.5rem;
-}
-
-nav a {
-  color: #fff;
-  margin: 0 1rem;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: #ffeb3b;
-}
-
-/* Main Content Layout */
 .container {
   display: flex;
   padding: 1rem;
