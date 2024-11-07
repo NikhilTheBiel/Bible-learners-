@@ -1,75 +1,117 @@
-/* General styling */
-body {
-  font-family: Arial, sans-serif;
+/* Reset styles */
+* {
   margin: 0;
   padding: 0;
-  background-color: #f4f4f9;
-  overflow-y: auto; /* Enables vertical scrolling */
+  box-sizing: border-box;
 }
 
-header {
-  background-color: #3c3b6e;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 10;
+/* Basic styling for the body */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
 }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 1rem;
-}
-
-/* Container for sections */
+/* Container for the sections */
 .container {
-  display: block; /* Stack sections vertically */
-  padding: 1rem;
-  gap: 1rem;
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; /* Stack sections vertically */
+  gap: 20px;
+  padding: 2em;
 }
 
-/* Section Styling */
-.section {
-  width: 100%; /* Full width for each section */
-  padding: 1rem;
+/* Testimonies Section */
+#testimonies-section {
+  background-color: #fffae6; /* Light yellow */
+  padding: 2em;
   border-radius: 8px;
-  box-sizing: border-box;
-  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#community {
-  background-color: #e8eaf6;
+#testimonies-section h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 1em;
 }
 
-#verses {
-  background-color: #fce4ec;
-  text-align: center;
+#testimonies-section p {
+  font-size: 16px;
+  color: #555;
 }
 
-#links {
-  background-color: #e8f5e9;
+/* Bible Verses Section */
+#bible-verses-section {
+  background-color: #e6f7ff; /* Light blue */
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+#bible-verses-section h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 1em;
+}
+
+#bible-verses-section .verse {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 1em;
+}
+
+/* Helpful Links Section */
+#links-section {
+  background-color: #f0f8e8; /* Light green */
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#links-section h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 1em;
+}
+
+#links-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#links-section li {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+#links-section li a {
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s;
+}
+
+#links-section li a:hover {
+  color: #0056b3;
+}
+
+/* Footer Styling */
 footer {
-  background-color: #3c3b6e;
+  background-color: #333;
   color: #fff;
   text-align: center;
-  padding: 1rem;
-  width: 100%;
-  position: sticky;
-  bottom: 0;
-  z-index: 10;
+  padding: 1em;
+  margin-top: 2em;
 }
 
-button {
-  background-color: #3c3b6e;
+footer button {
+  background-color: #555;
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding: 0.5em 1em;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
-  border-radius: 4px;
+}
+
+footer button:hover {
+  background-color: #777;
 }
