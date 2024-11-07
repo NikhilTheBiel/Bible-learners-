@@ -30,42 +30,45 @@
       </div>
       <button onclick="showPostForm()">Share Your Insight</button>
       <title>User Testimonies</title>
-    <link rel="stylesheet" href="stylee.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>User Testimonies</h1>
-      <button id="testimonyButton">Write Your Testimony</button>
-
-  <!-- Modal for Testimony Form -->
-  <div id="testimonyForm" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Write Your Testimony</h2>
-      <textarea id="testimonyInput" rows="4" placeholder="Type your testimony here..."></textarea>
-      <button id="submitTestimony">Submit</button>
+    
+    <button id="testimonyButton">Write Your Testimony</button>
+    <button id="tempTestimonyButton">Write Temporary Testimony</button> <!-- New button for temporary testimonies -->
+    
+    <div id="testimonyForm" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Write Your Testimony</h2>
+            <textarea id="testimonyInput" rows="4" placeholder="Type your testimony here..."></textarea>
+            <button id="submitTestimony">Submit</button>
+        </div>
     </div>
-  </div>
+    
+    <div id="testimonyList"></div>
+    <div id="tempTestimonyList"></div> <!-- New section for temporary testimonies -->
 
-  <script src="app.js"></script>
-  
+    <script src="script.js"></script>
 
     <!-- Center Section: Bible Verses with Nature Image -->
-    <section id="center-section" style="background-image: url('images/sunrise.jpg'); background-size: cover;">
-      <h2>Bible Verses</h2>
+<section id="center-section" style="background-image: url('images/sunrise.jpg'); background-size: cover;">
+    <h2>Bible Verses</h2>
       <div class="verse">
-        <p><strong>John 3:16:</strong> "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life."</p>
+        <marquee behavior="scroll" direction="left">
+        <strong>John 3:16:</strong> "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life."
       </div>
       <div class="verse">
         <p><strong>Psalm 23:1:</strong> "The Lord is my shepherd; I shall not want."</p>
       </div>
       <div class="verse">
-        <p><strong>Philippians 4:13:</strong> "I can do all things through Christ who strengthens me."</p>
-        <marquee behavior="scroll" direction="left" scrollamount="5">
-        <p style="font-family:Luminari"><strong>This week we will be having our Prayer meeting in Angel sisters house LOCATIONS AND OTHER THINGS TO GET will be posted on whatsapp</strong></p>
-      </marquee>
+        <p><strong>Philippians 4:13:</strong> "I can do all things through Christ who strengthens me."</p> 
+    </marquee>
       </div>
-    </section>
-
+    </div>
+  </section>
+  
     <!-- Right Section: Helpful Links with Icons -->
     <section id="right-section">
       <h2>Helpful Links</h2>
@@ -73,7 +76,7 @@
         <li><img src="istockphoto-912149646-612x6121.jpg" alt="Bible icon"><a href="https://www.biblegateway.com/" target="_blank">Bible Gateway</a></li>
         <li><img src="22633-2001.png" alt="Book icon"><a href="https://www.bible.com/" target="_blank">YouVersion Bible</a></li>
         <li><img src="depositphotos_395602550-stock-illustration-bible-book-icon-vector-illustration1.png" alt="Computer icon"><a href="https://www.biblestudytools.com/" target="_blank">Bible Study Tools</a></li>
-        <p style="font-family:verdana"><b> Go to this link to get telugu songs --> <sub><a href="https://christianlyricz.com/" target="_blank"> Telugu/English songs </a></sub></a>.</b></p>
+        <p style="font-family:verdana"><b> Go to this link to get telugu songs --> <sub><a href="https://christianlyricz.com/"> Telugu/English songs </a></sub></a>.</b></p>
       </ul>
     </section>
   </div>
@@ -81,7 +84,7 @@
   <!-- Footer with Contact Us Button -->
   <footer id="footer">
     <p>&copy; 2024 Bible Learning Community</p>
-    <p><a style="color:white;" href="mailto:nikhilbandari195@gmail.com">Contact Us</a></p>
+    <button onclick="contactUs()">Contact Us</button>
   </footer>
 
   <script src="app.js"></script>
