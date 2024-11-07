@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f4f4f9;
-  overflow-x: auto; /* Allows horizontal scrolling */
+  overflow-y: auto; /* Enables vertical scrolling */
 }
 
 header {
@@ -18,45 +18,42 @@ header {
   z-index: 10;
 }
 
-/* Horizontal container */
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
+/* Container for sections */
 .container {
-  display: flex;
-  width: 300%; /* Makes the sections span horizontally */
-  gap: 1rem;
+  display: block; /* Stack sections vertically */
   padding: 1rem;
+  gap: 1rem;
   box-sizing: border-box;
 }
 
-/* Left Section */
-#left-section {
-  width: 25%;
-  background-color: #e8eaf6;
+/* Section Styling */
+.section {
+  width: 100%; /* Full width for each section */
   padding: 1rem;
   border-radius: 8px;
-}
-
-/* Center Section */
-#center-section {
-  width: 50%;
-  background-color: #fce4ec;
-  padding: 1rem;
-  text-align: center;
-  border-radius: 8px;
-}
-
-.verse {
+  box-sizing: border-box;
   margin-bottom: 1rem;
 }
 
-/* Right Section */
-#right-section {
-  width: 25%;
-  background-color: #e8f5e9;
-  padding: 1rem;
-  border-radius: 8px;
+#community {
+  background-color: #e8eaf6;
 }
 
-/* Footer */
+#verses {
+  background-color: #fce4ec;
+  text-align: center;
+}
+
+#links {
+  background-color: #e8f5e9;
+}
+
 footer {
   background-color: #3c3b6e;
   color: #fff;
@@ -68,7 +65,6 @@ footer {
   z-index: 10;
 }
 
-/* Button Styling */
 button {
   background-color: #3c3b6e;
   color: #fff;
@@ -76,10 +72,4 @@ button {
   border: none;
   cursor: pointer;
   border-radius: 4px;
-}
-
-/* Link styling */
-a {
-  color: #3c3b6e;
-  text-decoration: none;
 }
