@@ -1,31 +1,50 @@
-background-color: #f4f4f9;
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  box-sizing: border-box;
 }
 
+/* Basic styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
 /* Header and Navigation */
 header {
   background-color: #3c3b6e;
+  background-color: #333;
   color: #fff;
   padding: 1rem;
+  padding: 1em;
   text-align: center;
 }
 
 nav {
-  margin-top: 0.5rem;
+  margin-top: 1em;
 }
 nav a {
   color: #fff;
-  margin: 0 1rem;
+  margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
 }
 nav a:hover {
-  color: #ffeb3b;
+  color: #ddd;
 }
-/* Main Content Layout */
+/* Main container */
 .container {
   display: flex;
   padding: 1rem;
   gap: 1rem;
+  justify-content: space-around;
+  padding: 2em;
+  gap: 20px;
 }
 
 /* Left Section */
@@ -33,7 +52,16 @@ nav a:hover {
   width: 25%;
   background-color: #e8eaf6;
   padding: 1rem;
+  flex: 1;
+  padding: 1em;
+  background-color: #e2e8f0;
+  background-size: cover;
   border-radius: 8px;
+  text-align: center;
+}
+#left-section h2 {
+  color: #333;
+  margin-bottom: 1em;
 }
 
 /* Center Section */
@@ -42,11 +70,19 @@ nav a:hover {
   background-color: #fce4ec;
   padding: 1rem;
   text-align: center;
+  flex: 1;
+  padding: 1em;
+  background-color: #c3d6e6;
+  background-size: cover;
   border-radius: 8px;
+  text-align: center;
 }
 
 .verse {
   margin-bottom: 1rem;
+#center-section h2 {
+  color: #333;
+  margin-bottom: 1em;
 }
 
 /* Right Section */
@@ -54,23 +90,45 @@ nav a:hover {
   width: 25%;
   background-color: #e8f5e9;
   padding: 1rem;
+  flex: 1;
+  padding: 1em;
+  background-color: #e8e1c8;
   border-radius: 8px;
+  text-align: center;
+}
+#right-section h2 {
+  color: #333;
+  margin-bottom: 1em;
+}
+#right-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+#right-section li {
+  margin: 10px 0;
 }
 
 /* Footer */
 footer {
   background-color: #3c3b6e;
+  background-color: #333;
   color: #fff;
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
+  padding: 1em;
+  margin-top: 2em;
 }
 
 button {
   background-color: #3c3b6e;
+footer button {
+  background-color: #555;
   color: #fff;
   padding: 0.5rem 1rem;
+  padding: 0.5em 1em;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
   border-radius: 4px;
 }
@@ -79,4 +137,6 @@ button {
 a {
   color: #3c3b6e;
   text-decoration: none;
+footer button:hover {
+  background-color: #777;
 }
