@@ -4,35 +4,27 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f4f4f9;
-  color: #333;
 }
 
-/* Header and Navigation */
+/* Header Styling */
 header {
-  background-color: #f4f4f9;
+  background-color: #333;
+  color: #fff;
   padding: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-header h1 {
-  margin: 0;
-  color: #333;
-}
-
+/* Navigation Styling */
 nav {
   margin-top: 0.5rem;
-  display: flex;
-  justify-content: center;
+  text-align: center; /* Centers nav links */
 }
-
 nav a {
-  color: #333;
+  color: #fff;
   margin: 0 1rem;
   text-decoration: none;
   font-weight: bold;
 }
-
 nav a:hover {
   color: #ffeb3b;
 }
@@ -47,63 +39,52 @@ nav a:hover {
 /* Left Section */
 #left-section {
   width: 25%;
-  background-color: #ffc1e3; /* Pink */
+  background-color: #e8eaf6;
   padding: 1rem;
   border-radius: 8px;
-  text-align: center;
 }
 
 /* Center Section */
 #center-section {
   width: 50%;
-  background-color: #fff59d; /* Yellow */
+  background-color: #fce4ec;
   padding: 1rem;
   border-radius: 8px;
-  text-align: center;
 }
 
 /* Right Section */
 #right-section {
   width: 25%;
-  background-color: #b3e5fc; /* Blue */
+  background-color: #e8f5e9;
   padding: 1rem;
   border-radius: 8px;
-  text-align: center;
 }
 
-/* Shared Section Styling */
+/* Section Flexbox Styling */
 .section {
+  flex: 1;
   padding: 1rem;
   color: #333;
+  text-align: center;
   border-radius: 8px;
 }
 
-/* Footer */
+/* Individual Section Colors */
+.left {
+  background-color: #ffc1e3; /* Pink */
+}
+.center {
+  background-color: #fff59d; /* Yellow */
+}
+.right {
+  background-color: #b3e5fc; /* Blue */
+}
+
+/* Footer Styling */
 footer {
-  background-color: #f4f4f9;
-  color: #333;
-  text-align: center;
-  padding: 1rem;
-  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 2rem;
-}
-
-footer p {
-  margin: 0;
-  font-size: 0.9rem;
-}
-
-/* Button Styling */
-button {
   background-color: #333;
   color: #fff;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-button:hover {
-  background-color: #555;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
 }
