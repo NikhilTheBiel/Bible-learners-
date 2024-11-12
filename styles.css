@@ -1,3 +1,4 @@
+background-color: #f4f4f9;
 /* General styling */
 body {
   font-family: Arial, sans-serif;
@@ -7,68 +8,73 @@ body {
 }
 
 /* Header and Navigation */
-header {
-  background-color: #3c3b6e;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-}
-
+@@ -12,49 +17,45 @@ header {
 nav {
   margin-top: 0.5rem;
 }
-
 nav a {
   color: #fff;
   margin: 0 1rem;
   text-decoration: none;
   font-weight: bold;
 }
-
 nav a:hover {
   color: #ffeb3b;
 }
-
+/* Main Content Layout */
 /* Container for the main sections */
 .container {
-  display: flex;                   /* Arrange sections in a row */
-  gap: 1rem;                       /* Spacing between sections */
+  display: flex;
   padding: 1rem;
-  justify-content: space-between;  /* Equal spacing between sections */
+  gap: 1rem;
+}
+/* Left Section */
+#left-section {
+  width: 25%;
+  background-color: #e8eaf6;
+  padding: 1rem;
+  border-radius: 8px;
 }
 
+/* Center Section */
+#center-section {
+  width: 50%;
+  background-color: #fce4ec;
 /* Section Styling */
 .section {
+  flex: 1;               /* Each section takes up equal width */
   padding: 1rem;
   color: #333;
   text-align: center;
   border-radius: 8px;
-  min-height: 300px;               /* Adjust as needed for content */
 }
 
-/* Adjusted flex values to make the center section bigger */
+.verse {
+  margin-bottom: 1rem;
+/* Individual Section Colors */
 .left {
-  flex: 0.5;                       /* Smaller width for the left section */
-  background-color: #ffc1e3;       /* Pink */
-  text-align: left;                /* Align content to the left */
+  background-color: #ffc1e3; /* Pink */
 }
 
+/* Right Section */
+#right-section {
+  width: 25%;
+  background-color: #e8f5e9;
+  padding: 1rem;
+  border-radius: 8px;
 .center {
-  flex: 3;                         /* Larger width for the center section */
-  background-color: #fff59d;       /* Yellow */
+  background-color: #fff59d; /* Yellow */
 }
-
 .right {
-  flex: 0.5;                       /* Smaller width for the right section */
-  background-color: #b3e5fc;       /* Blue */
+  background-color: #b3e5fc; /* Blue */
 }
 
 /* Footer */
-footer {
-  background-color: #3c3b6e;
+@@ -63,7 +64,5 @@ footer {
   color: #fff;
   text-align: center;
   padding: 1rem;
+  margin-top: 2rem;
   margin-top: 1rem;
-  width: 100%;                     /* Full width footer */
 }
+button {
