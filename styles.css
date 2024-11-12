@@ -1,4 +1,9 @@
- background-color: #f4f4f9;
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
 }
 
 /* Header and Navigation */
@@ -12,49 +17,45 @@ header {
 nav {
   margin-top: 0.5rem;
 }
+
 nav a {
   color: #fff;
   margin: 0 1rem;
   text-decoration: none;
   font-weight: bold;
 }
+
 nav a:hover {
   color: #ffeb3b;
 }
-/* Main Content Layout */
+
+/* Container for the main sections */
 .container {
   display: flex;
-  padding: 1rem;
   gap: 1rem;
+  padding: 1rem;
 }
 
-/* Left Section */
-#left-section {
-  width: 25%;
-  background-color: #e8eaf6;
+/* Section Styling */
+.section {
+  flex: 1;               /* Each section takes up equal width */
   padding: 1rem;
-  border-radius: 8px;
-}
-
-/* Center Section */
-#center-section {
-  width: 50%;
-  background-color: #fce4ec;
-  padding: 1rem;
+  color: #333;
   text-align: center;
   border-radius: 8px;
 }
 
-.verse {
-  margin-bottom: 1rem;
+/* Individual Section Colors */
+.left {
+  background-color: #ffc1e3; /* Pink */
 }
 
-/* Right Section */
-#right-section {
-  width: 25%;
-  background-color: #e8f5e9;
-  padding: 1rem;
-  border-radius: 8px;
+.center {
+  background-color: #fff59d; /* Yellow */
+}
+
+.right {
+  background-color: #b3e5fc; /* Blue */
 }
 
 /* Footer */
@@ -63,7 +64,5 @@ footer {
   color: #fff;
   text-align: center;
   padding: 1rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
-
-button {
