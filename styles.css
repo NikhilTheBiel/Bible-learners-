@@ -1,117 +1,82 @@
-/* Reset styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+background-color: #f4f4f9;
 }
 
-/* Basic styling for the body */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-  line-height: 1.6;
+/* Header and Navigation */
+header {
+  background-color: #3c3b6e;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
 }
 
-/* Container for the sections */
+nav {
+  margin-top: 0.5rem;
+}
+nav a {
+  color: #fff;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a:hover {
+  color: #ffeb3b;
+}
+/* Main Content Layout */
 .container {
   display: flex;
-  flex-direction: column; /* Stack sections vertically */
-  gap: 20px;
-  padding: 2em;
+  padding: 1rem;
+  gap: 1rem;
 }
 
-/* Testimonies Section */
-#testimonies-section {
-  background-color: #fffae6; /* Light yellow */
-  padding: 2em;
+/* Left Section */
+#left-section {
+  width: 25%;
+  background-color: #e8eaf6;
+  padding: 1rem;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#testimonies-section h2 {
-  color: #333;
-  font-size: 24px;
-  margin-bottom: 1em;
-}
-
-#testimonies-section p {
-  font-size: 16px;
-  color: #555;
-}
-
-/* Bible Verses Section */
-#bible-verses-section {
-  background-color: #e6f7ff; /* Light blue */
-  padding: 2em;
+/* Center Section */
+#center-section {
+  width: 50%;
+  background-color: #fce4ec;
+  padding: 1rem;
+  text-align: center;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#bible-verses-section h2 {
-  color: #333;
-  font-size: 24px;
-  margin-bottom: 1em;
+.verse {
+  margin-bottom: 1rem;
 }
 
-#bible-verses-section .verse {
-  font-size: 18px;
-  color: #444;
-  margin-bottom: 1em;
-}
-
-/* Helpful Links Section */
-#links-section {
-  background-color: #f0f8e8; /* Light green */
-  padding: 2em;
+/* Right Section */
+#right-section {
+  width: 25%;
+  background-color: #e8f5e9;
+  padding: 1rem;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#links-section h2 {
-  color: #333;
-  font-size: 24px;
-  margin-bottom: 1em;
-}
-
-#links-section ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-#links-section li {
-  font-size: 16px;
-  margin: 10px 0;
-}
-
-#links-section li a {
-  text-decoration: none;
-  color: #007bff;
-  transition: color 0.3s;
-}
-
-#links-section li a:hover {
-  color: #0056b3;
-}
-
-/* Footer Styling */
+/* Footer */
 footer {
-  background-color: #333;
+  background-color: #3c3b6e;
   color: #fff;
   text-align: center;
-  padding: 1em;
-  margin-top: 2em;
+  padding: 1rem;
+  margin-top: 2rem;
 }
 
-footer button {
-  background-color: #555;
+button {
+  background-color: #3c3b6e;
   color: #fff;
-  padding: 0.5em 1em;
+  padding: 0.5rem 1rem;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
+  border-radius: 4px;
 }
 
-footer button:hover {
-  background-color: #777;
+/* Link styling */
+a {
+  color: #3c3b6e;
+  text-decoration: none;
 }
