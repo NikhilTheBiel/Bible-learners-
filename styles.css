@@ -31,18 +31,20 @@ nav a:hover {
 
 /* Container for the main sections */
 .container {
-  display: flex;
-  gap: 1rem;
+  display: flex;                   /* Arrange sections in a row */
+  gap: 1rem;                       /* Spacing between sections */
   padding: 1rem;
+  justify-content: space-between;  /* Equal spacing between sections */
 }
 
 /* Section Styling */
 .section {
-  flex: 1;               /* Each section takes up equal width */
+  flex: 1;                         /* Each section takes equal width */
   padding: 1rem;
   color: #333;
   text-align: center;
   border-radius: 8px;
+  min-height: 200px;               /* Adjust as needed for content */
 }
 
 /* Individual Section Colors */
@@ -65,4 +67,5 @@ footer {
   text-align: center;
   padding: 1rem;
   margin-top: 1rem;
+  width: 100%;                     /* Full width footer */
 }
