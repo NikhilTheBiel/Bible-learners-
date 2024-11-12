@@ -1,28 +1,33 @@
-/* General styling */
-body {
-  font-family: Arial, sans-serif;
 /* Reset styles */
 * {
   margin: 0;
   padding: 0;
-  background-color: #f4f4f9;
   box-sizing: border-box;
 }
-
 /* Basic styling */
+/* General styling */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  overflow-x: auto; /* Allows horizontal scrolling */
 }
+
 /* Header and Navigation */
 header {
-  background-color: #3c3b6e;
   background-color: #333;
+  background-color: #3c3b6e;
   color: #fff;
-  padding: 1rem;
   padding: 1em;
+  padding: 1rem;
   text-align: center;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 10;
 }
 
 nav {
@@ -38,24 +43,27 @@ nav a:hover {
   color: #ddd;
 }
 /* Main container */
+/* Horizontal container */
 .container {
   display: flex;
-  padding: 1rem;
-  gap: 1rem;
   justify-content: space-around;
   padding: 2em;
   gap: 20px;
+  width: 300%; /* Makes the sections span horizontally */
+  gap: 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 /* Left Section */
 #left-section {
-  width: 25%;
-  background-color: #e8eaf6;
-  padding: 1rem;
   flex: 1;
   padding: 1em;
   background-color: #e2e8f0;
   background-size: cover;
+  width: 25%;
+  background-color: #e8eaf6;
+  padding: 1rem;
   border-radius: 8px;
   text-align: center;
 }
@@ -66,33 +74,33 @@ nav a:hover {
 
 /* Center Section */
 #center-section {
-  width: 50%;
-  background-color: #fce4ec;
-  padding: 1rem;
-  text-align: center;
   flex: 1;
   padding: 1em;
   background-color: #c3d6e6;
   background-size: cover;
   border-radius: 8px;
+  width: 50%;
+  background-color: #fce4ec;
+  padding: 1rem;
   text-align: center;
+  border-radius: 8px;
 }
 
-.verse {
-  margin-bottom: 1rem;
 #center-section h2 {
   color: #333;
   margin-bottom: 1em;
+.verse {
+  margin-bottom: 1rem;
 }
 
 /* Right Section */
 #right-section {
-  width: 25%;
-  background-color: #e8f5e9;
-  padding: 1rem;
   flex: 1;
   padding: 1em;
   background-color: #e8e1c8;
+  width: 25%;
+  background-color: #e8f5e9;
+  padding: 1rem;
   border-radius: 8px;
   text-align: center;
 }
@@ -110,33 +118,37 @@ nav a:hover {
 
 /* Footer */
 footer {
-  background-color: #3c3b6e;
   background-color: #333;
+  background-color: #3c3b6e;
   color: #fff;
   text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
   padding: 1em;
   margin-top: 2em;
+  padding: 1rem;
+  width: 100%;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
 }
 
-button {
-  background-color: #3c3b6e;
 footer button {
   background-color: #555;
+/* Button Styling */
+button {
+  background-color: #3c3b6e;
   color: #fff;
-  padding: 0.5rem 1rem;
   padding: 0.5em 1em;
+  padding: 0.5rem 1rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   border-radius: 4px;
 }
 
+footer button:hover {
+  background-color: #777;
 /* Link styling */
 a {
   color: #3c3b6e;
   text-decoration: none;
-footer button:hover {
-  background-color: #777;
 }
