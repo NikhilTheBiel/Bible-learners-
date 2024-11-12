@@ -39,7 +39,6 @@ nav a:hover {
 
 /* Section Styling */
 .section {
-  flex: 1;                         /* Each section takes equal width */
   padding: 1rem;
   color: #333;
   text-align: center;
@@ -47,17 +46,21 @@ nav a:hover {
   min-height: 300px;               /* Adjust as needed for content */
 }
 
-/* Individual Section Colors */
+/* Adjusted flex values for each section */
 .left {
-  background-color: #FFD1DB; /* Pink */
+  flex: 1;                         /* Smaller width for the left section */
+  background-color: #ffc1e3;       /* Pink */
+  text-align: left;                /* Align content to the left */
 }
 
 .center {
-  background-color: #FEF5C3; /* Yellow */
+  flex: 2;                         /* Larger width for the center section */
+  background-color: #fff59d;       /* Yellow */
 }
 
 .right {
-  background-color: #C4E8F6; /* Blue */
+  flex: 1;                         /* Smaller width for the right section */
+  background-color: #b3e5fc;       /* Blue */
 }
 
 /* Footer */
