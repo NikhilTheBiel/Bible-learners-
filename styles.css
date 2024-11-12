@@ -3,30 +3,38 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #FAF9F6;
+  background-color: #FAF9F6;  /* Updated background color */
+  color: #333;
 }
 
-/* Header Styling */
+/* Header and Navigation */
 header {
-  background-color: #333;
-  color: #fff;
+  background-color: #FAF9F6;  /* Updated header color */
   padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-/* Navigation Styling */
-nav {
-  margin-top: 0.5rem;
-  text-align: center; /* Centers nav links */
+header h1 {
+  margin: 0;
+  color: #333;
 }
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
 nav a {
-  color: #fff;
-  margin: 0 1rem;
+  color: #333;
   text-decoration: none;
   font-weight: bold;
 }
+
 nav a:hover {
-  color: #ffeb3b;
+  color: #ffeb3b; /* Yellow color on hover */
 }
 
 /* Main Content Layout */
@@ -39,52 +47,67 @@ nav a:hover {
 /* Left Section */
 #left-section {
   width: 25%;
-  background-color: #e8eaf6;
+  background-color: #ffc1e3; /* Pink */
   padding: 1rem;
   border-radius: 8px;
+  text-align: center;
 }
 
 /* Center Section */
 #center-section {
   width: 50%;
-  background-color: #fce4ec;
+  background-color: #fff59d; /* Yellow */
   padding: 1rem;
   border-radius: 8px;
+  text-align: center;
 }
 
 /* Right Section */
 #right-section {
   width: 25%;
-  background-color: #e8f5e9;
+  background-color: #b3e5fc; /* Blue */
   padding: 1rem;
   border-radius: 8px;
+  text-align: center;
 }
 
-/* Section Flexbox Styling */
-.section {
-  flex: 1;
-  padding: 1rem;
+/* Footer */
+footer {
+  background-color: #FAF9F6;  /* Updated footer color */
   color: #333;
   text-align: center;
-  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
 }
 
-/* Individual Section Colors */
-.left {
-  background-color: #FFD1DB; /* Pink */
-}
-.center {
-  background-color: #FEF5C3; /* Yellow */
-}
-.right {
-  background-color: #FEF5C3; /* Blue */
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
 }
 
-/* Footer Styling */
-footer {
+/* Footer Links */
+footer a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: #ffeb3b;  /* Yellow color on hover */
+}
+
+/* Button Styling */
+button {
   background-color: #333;
   color: #fff;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #555;
 }
