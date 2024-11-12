@@ -46,20 +46,20 @@ nav a:hover {
   min-height: 300px;               /* Adjust as needed for content */
 }
 
-/* Adjusted flex values for each section */
+/* Adjusted flex values to make the center section bigger */
 .left {
-  flex: 1;                         /* Smaller width for the left section */
+  flex: 0.5;                       /* Smaller width for the left section */
   background-color: #ffc1e3;       /* Pink */
   text-align: left;                /* Align content to the left */
 }
 
 .center {
-  flex: 2;                         /* Larger width for the center section */
+  flex: 3;                         /* Larger width for the center section */
   background-color: #fff59d;       /* Yellow */
 }
 
 .right {
-  flex: 1;                         /* Smaller width for the right section */
+  flex: 0.5;                       /* Smaller width for the right section */
   background-color: #b3e5fc;       /* Blue */
 }
 
