@@ -1,3 +1,34 @@
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+/* Header and Navigation */
+header {
+  background-color: #3c3b6e;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav {
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ffeb3b;
+}
+
 /* Container for the main sections */
 .container {
   display: flex;                   /* Arrange sections in a row */
@@ -12,25 +43,32 @@
   color: #333;
   text-align: center;
   border-radius: 8px;
-  min-height: 200px;               /* Adjust as needed for content */
+  min-height: 300px;               /* Adjust as needed for content */
 }
 
-/* Individual Section Flex Settings */
+/* Adjusted flex values to make the center section bigger */
 .left {
-  flex: 1;                         /* Smallest width */
+  flex: 0.5;                       /* Smaller width for the left section */
   background-color: #ffc1e3;       /* Pink */
+  text-align: left;                /* Align content to the left */
 }
 
 .center {
-  flex: 3;                         /* Largest width */
+  flex: 3;                         /* Larger width for the center section */
   background-color: #fff59d;       /* Yellow */
 }
 
 .right {
-  flex: 1;                         /* Smallest width */
+  flex: 0.5;                       /* Smaller width for the right section */
   background-color: #b3e5fc;       /* Blue */
 }
 
 /* Footer */
 footer {
-  background-color: #3
+  background-color: #3c3b6e;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+  width: 100%;                     /* Full width footer */
+}
