@@ -1,28 +1,32 @@
-// Function to show the testimony form
+// Function to show the testimony form modal
 function showTestimonyForm() {
   const formModal = document.getElementById("testimonyForm");
   formModal.style.display = "block";
 }
 
-// Function to close the form
+// Function to close the form modal
 function closeForm() {
   const formModal = document.getElementById("testimonyForm");
   formModal.style.display = "none";
 }
 
-// Add event listener for the close button
+// Event listener to open the form when clicking "Write Your Testimony" button
+document.getElementById("testimonyButton").addEventListener("click", showTestimonyForm);
+
+// Event listener to close the form when clicking the close button
 document.querySelector(".close").addEventListener("click", closeForm);
 
-// Function to submit testimony
+// Function to submit the testimony
 document.getElementById("submitTestimony").addEventListener("click", function() {
   const testimonyInput = document.getElementById("testimonyInput").value;
-  
+
+  // Validate input
   if (testimonyInput.trim() === "") {
     alert("Please enter your testimony.");
     return;
   }
 
-  // Create a new testimony element
+  // Add the new testimony to the list
   const testimonyList = document.getElementById("testimonyList");
   const testimonyDiv = document.createElement("div");
   testimonyDiv.classList.add("testimony-item");
@@ -34,10 +38,7 @@ document.getElementById("submitTestimony").addEventListener("click", function() 
   closeForm();
 });
 
-// Event listener for the "Write Your Testimony" button
-document.getElementById("testimonyButton").addEventListener("click", showTestimonyForm);
-
-// Close modal if user clicks outside of it
+// Close the modal if the user clicks outside of it
 window.addEventListener("click", function(event) {
   const formModal = document.getElementById("testimonyForm");
   if (event.target === formModal) {
