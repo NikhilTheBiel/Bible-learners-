@@ -27,3 +27,4 @@ document.getElementById('submitTestimony').onclick = function() {
     alert('Please enter your testimony before submitting.');
   }
 };
+
