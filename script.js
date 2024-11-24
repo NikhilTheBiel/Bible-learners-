@@ -1,24 +1,48 @@
-// Function to submit a new testimony
+// Function to load testimonies from localStorage
+function loadTestimonies() {
+  // Retrieve testimonies from localStorage, or initialize as an empty array if none exist
+  const testimonies = JSON.parse(localStorage.getItem("testimonies")) || [];
+  const postList = document.getElementById("post-list");
+
+  // Clear existing list in case of refresh
+  postList.innerHTML = "";
+
+  // Render each testimony
+  testimonies.forEach((testimony) => {
+    const testimonyDiv = document.createElement("div");
+    testimonyDiv.classList.add("testimony-item");
+    testimonyDiv.textContent = testimony; // Display the testimony text
+    postList.appendChild(testimonyDiv);
+  });
+}
+
+// Function to add a new testimony
 document.getElementById("submitTestimony").addEventListener("click", function () {
   const testimonyInput = document.getElementById("testimonyInput").value.trim();
 
-  if (testimonyInput.length < 500 || testimonyInput.length > 1000) {
-    alert("Please enter a testimony with at least 500 to 1000 characters.");
+  // Check for empty input
+  if (!testimonyInput) {
+    alert("Please enter your testimony.");
     return;
   }
 
-  // Get existing testimonies from localStorage, add new one, and save back to localStorage
+  // Retrieve current testimonies, add the new one, and save back to localStorage
   const testimonies = JSON.parse(localStorage.getItem("testimonies")) || [];
   testimonies.push(testimonyInput);
   localStorage.setItem("testimonies", JSON.stringify(testimonies));
 
-  // Add the new testimony to the post list on the page
-  const postList = document.getElementById("post-list");
-  const testimonyDiv = document.createElement("div");
-  testimonyDiv.classList.add("testimony-item");
-  testimonyDiv.innerHTML = `<p>${testimonyInput}</p>`;
-  postList.appendChild(testimonyDiv);
-
-  // Clear the input field
+  // Refresh the testimony list and clear the input
+  loadTestimonies();
   document.getElementById("testimonyInput").value = "";
+
+  // Hide the modal after submission
+  document.getElementById("testimonyForm").style.display = "none";
 });
+
+// Show the testimony form modal
+document.getElementById("testimonyButton").addEventListener("click", function () {
+  document.getElementById("testimonyForm").style.display = "block";
+});
+
+// Close the testimony form modal
+document.querySelector(".close").addEventListener("click
