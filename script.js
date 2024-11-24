@@ -1,44 +1,24 @@
-// Load testimonies from localStorage
-function loadTestimonies() {
-  const testimonies = JSON.parse(localStorage.getItem("testimonies")) || [];
-  const postList = document.getElementById("post-list");
-
-  postList.innerHTML = ""; // Clear the list before loading
-
-  testimonies.forEach((testimony) => {
-    const testimonyDiv = document.createElement("div");
-    testimonyDiv.textContent = testimony;
-    postList.appendChild(testimonyDiv);
-  });
-}
-
-// Show the testimony form
-document.getElementById("testimonyButton").addEventListener("click", function () {
-  document.getElementById("testimonyForm").style.display = "block";
-});
-
-// Close the testimony form
-document.querySelector(".close").addEventListener("click", function () {
-  document.getElementById("testimonyForm").style.display = "none";
-});
-
-// Submit a new testimony
+// Function to submit a new testimony
 document.getElementById("submitTestimony").addEventListener("click", function () {
   const testimonyInput = document.getElementById("testimonyInput").value.trim();
 
-  if (!testimonyInput) {
-    alert("Please enter your testimony.");
+  if (testimonyInput.length < 500 || testimonyInput.length > 1000) {
+    alert("Please enter a testimony with at least 500 to 1000 characters.");
     return;
   }
 
+  // Get existing testimonies from localStorage, add new one, and save back to localStorage
   const testimonies = JSON.parse(localStorage.getItem("testimonies")) || [];
   testimonies.push(testimonyInput);
   localStorage.setItem("testimonies", JSON.stringify(testimonies));
 
-  loadTestimonies();
-  document.getElementById("testimonyInput").value = ""; // Clear input
-  document.getElementById("testimonyForm").style.display = "none"; // Close modal
-});
+  // Add the new testimony to the post list on the page
+  const postList = document.getElementById("post-list");
+  const testimonyDiv = document.createElement("div");
+  testimonyDiv.classList.add("testimony-item");
+  testimonyDiv.innerHTML = `<p>${testimonyInput}</p>`;
+  postList.appendChild(testimonyDiv);
 
-// Load testimonies on page load
-window.addEventListener("load", loadTestimonies);
+  // Clear the input field
+  document.getElementById("testimonyInput").value = "";
+});
