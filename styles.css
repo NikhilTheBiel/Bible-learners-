@@ -1,103 +1,60 @@
 /* General Styling */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #FAF9F6;  /* Updated background color */
+  background-color: #333333;
   color: #333;
 }
 
-/* Header and Navigation */
-header {
-  background-color: #FAF9F6;  /* Updated header color */
-  padding: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-header h1 {
-  margin: 0;
-  color: #333;
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 0.5rem;
-}
-
-nav a {
-  color: #333;
-  text-decoration: none;
+h1, h2 {
+  font-family: 'Georgia', serif;
   font-weight: bold;
 }
 
-nav a:hover {
-  color: #ffeb3b; /* Yellow color on hover */
-}
-
-/* Main Content Layout */
 .container {
   display: flex;
-  padding: 1rem;
   gap: 1rem;
+  padding: 1rem;
 }
 
-/* Left Section */
+/* Testimony Section */
 #left-section {
   width: 25%;
-  background-color: #FFD1DB; /* Pink */
+  background-color: #FFD1DB;  /* Light pink */
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
 }
 
-/* Center Section */
-#center-section {
-  width: 50%;
-  background-color: #FEF5C3; /* Yellow */
+#post-list {
   padding: 1rem;
+  background-color: #FEF5C3;  /* Light yellow */
   border-radius: 8px;
-  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Right Section */
-#right-section {
-  width: 25%;
-  background-color: #C4E8F6; /* Blue */
+/* Testimony item styles */
+.testimony-item {
   padding: 1rem;
+  background-color: #FFFFFF;  /* White background for each testimony */
   border-radius: 8px;
-  text-align: center;
-}
-
-/* Footer */
-footer {
-  background-color: #FAF9F6;  /* Updated footer color */
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  font-size: 1.1rem;
+  line-height: 1.5;
+  font-family: 'Arial', sans-serif;
   color: #333;
-  text-align: center;
-  padding: 1rem;
-  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 2rem;
 }
 
-footer p {
+.testimony-item p {
   margin: 0;
-  font-size: 0.9rem;
+  padding: 0;
+  font-size: 1rem;
+  font-style: italic;
 }
 
-/* Footer Links */
-footer a {
-  color: #333;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-footer a:hover {
-  color: #ffeb3b;  /* Yellow color on hover */
-}
-
-/* Button Styling */
+/* Button styling */
 button {
   background-color: #333;
   color: #fff;
@@ -106,120 +63,79 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
+  font-family: 'Arial', sans-serif;
 }
 
 button:hover {
   background-color: #555;
 }
 
-/* Styling for testimony items */
-.testimony-item {
+/* Modal Styling for Testimony Form */
+.modal-content {
+  padding: 1rem;
   background-color: #fff;
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 60%;
+  margin: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* "Show More" button styling */
+textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #333;
+}
+
+/* Footer */
+footer {
+  background-color: #FAF9F6;
+  color: #333;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+/* Show More Button */
 #showMoreButton {
-  background-color: #333;
-  color: #fff;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1rem;
   padding: 0.5rem 1rem;
-  border: none;
+  margin-top: 1rem;
   border-radius: 4px;
   cursor: pointer;
-  font-weight: bold;
-  margin-top: 1rem;
 }
 
 #showMoreButton:hover {
-  background-color: #555;
-}
-
-/* Testimony Form Modal */
-#testimonyForm {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-
-#testimonyForm .modal-content {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  width: 50%;
-}
-
-#testimonyForm .modal-content textarea {
-  width: 100%;
-  padding: 0.5rem;
-  font-size: 1rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-#testimonyForm .close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #left-section, #center-section, #right-section {
-    width: 90%; /* Full width on smaller screens */
-    margin-bottom: 1rem;
-  }
-
-  header h1 {
-    font-size: 1.8rem;
-  }
-
-  nav {
-    flex-wrap: wrap;
-  }
+  background-color: #45a049;
 }
 
 @media (max-width: 768px) {
-  header {
-    text-align: left;
-    padding: 0.5rem;
-  }
-
-  nav {
-    display: flex;
+  .container {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
   }
 
-  nav img {
-    margin-bottom: 0.5rem;
+  .testimony-item {
+    font-size: 1rem;
   }
 
   button {
-    width: 100%; /* Buttons span full width */
+    width: 100%;
   }
 
-  #testimonyForm .modal-content {
-    width: 90%; /* Adjust modal size for small screens */
-  }
-
-  footer p {
-    font-size: 0.8rem;
+  .modal-content {
+    width: 90%;
   }
 }
