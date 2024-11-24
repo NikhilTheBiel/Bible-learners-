@@ -6,6 +6,64 @@ body {
   background-color: #FAF9F6;  /* Updated background color */
   color: #333;
 }
+/* Default styles for desktop */
+.container {
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+/* Adjust for tablets (landscape and portrait) */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #left-section, #center-section, #right-section {
+    width: 90%; /* Full width on smaller screens */
+    margin-bottom: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+}
+
+/* Adjust for phones */
+@media (max-width: 768px) {
+  header {
+    text-align: left;
+    padding: 0.5rem;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  nav img {
+    margin-bottom: 0.5rem;
+  }
+
+  button {
+    width: 100%; /* Buttons span full width */
+  }
+
+  #testimonyForm .modal-content {
+    width: 90%; /* Adjust modal size for small screens */
+  }
+
+  footer p {
+    font-size: 0.8rem;
+  }
+}
 
 /* Header and Navigation */
 header {
