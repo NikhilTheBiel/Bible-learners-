@@ -1,60 +1,154 @@
 /* General Styling */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #333333;
+  background-color: #FAF9F6; /* Updated background color */
+  background-color: #FAF9F6;  /* Updated background color */
   color: #333;
 }
 
-h1, h2 {
-  font-family: 'Georgia', serif;
-  font-weight: bold;
-}
-
+/* Default styles for desktop */
 .container {
   display: flex;
-  gap: 1rem;
   padding: 1rem;
+  gap: 1rem;
+}
+/* Adjust for tablets (landscape and portrait) */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  #left-section, #center-section, #right-section {
+    width: 90%; /* Full width on smaller screens */
+    margin-bottom: 1rem;
+  }
+  header h1 {
+    font-size: 1.8rem;
+  }
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+/* Adjust for phones */
+@media (max-width: 768px) {
+  header {
+    text-align: center;
+    padding: 0.5rem;
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  nav img {
+    margin-bottom: 0.5rem;
+  }
+  button {
+    width: 100%; /* Buttons span full width */
+  }
+  #testimonyForm .modal-content {
+    width: 90%; /* Adjust modal size for small screens */
+  }
+  footer p {
+    font-size: 0.8rem;
+  }
+  #left-section, #center-section, #right-section {
+    width: 100%; /* Take full width on phones */
+    padding: 1rem;
+    text-align: center;
+  }
+}
+/* Header and Navigation */
+header {
+  background-color: #FAF9F6; /* Updated header color */
+  background-color: #FAF9F6;  /* Updated header color */
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+@@ -84,65 +18,62 @@
+header h1 {
+  margin: 0;
+  color: #333;
+  font-size: 2rem;
 }
 
-/* Testimony Section */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+nav a:hover {
+  color: #ffeb3b; /* Yellow color on hover */
+}
+
+/* Main Content Layout */
+.container {
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+/* Left Section */
 #left-section {
   width: 25%;
-  background-color: #FFD1DB;  /* Light pink */
+  background-color: #FFD1DB; /* Pink */
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
 }
 
-#post-list {
+/* Center Section */
+#center-section {
+  width: 50%;
+  background-color: #FEF5C3; /* Yellow */
   padding: 1rem;
-  background-color: #FEF5C3;  /* Light yellow */
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-/* Testimony item styles */
-.testimony-item {
+/* Right Section */
+#right-section {
+  width: 25%;
+  background-color: #C4E8F6; /* Blue */
   padding: 1rem;
-  background-color: #FFFFFF;  /* White background for each testimony */
   border-radius: 8px;
-  margin-bottom: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  font-size: 1.1rem;
-  line-height: 1.5;
-  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background-color: #FAF9F6; /* Updated footer color */
+  background-color: #FAF9F6;  /* Updated footer color */
   color: #333;
+  text-align: center;
+  padding: 1rem;
+@@ -159,24 +90,136 @@
+footer a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.testimony-item p {
-  margin: 0;
-  padding: 0;
-  font-size: 1rem;
-  font-style: italic;
+footer a:hover {
+  color: #ffeb3b; /* Yellow color on hover */
+  color: #ffeb3b;  /* Yellow color on hover */
 }
 
-/* Button styling */
+/* Button Styling */
 button {
   background-color: #333;
   color: #fff;
@@ -63,79 +157,103 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
-  font-family: 'Arial', sans-serif;
 }
 
 button:hover {
   background-color: #555;
 }
-
-/* Modal Styling for Testimony Form */
-.modal-content {
-  padding: 1rem;
+/* Styling for testimony items */
+.testimony-item {
   background-color: #fff;
-  border-radius: 8px;
-  width: 60%;
-  margin: auto;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-textarea {
-  width: 100%;
-  padding: 1rem;
-  font-size: 1.1rem;
-  line-height: 1.5;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
-
-textarea:focus {
-  outline: none;
-  border-color: #333;
-}
-
-/* Footer */
-footer {
-  background-color: #FAF9F6;
-  color: #333;
-  text-align: center;
-  padding: 1rem;
-  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-}
-
-footer p {
-  font-size: 0.9rem;
-}
-
-/* Show More Button */
+/* "Show More" button styling */
 #showMoreButton {
-  background-color: #4CAF50;
-  color: white;
-  font-size: 1rem;
+  background-color: #333;
+  color: #fff;
   padding: 0.5rem 1rem;
-  margin-top: 1rem;
+  border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-weight: bold;
+  margin-top: 1rem;
 }
-
 #showMoreButton:hover {
-  background-color: #45a049;
+  background-color: #555;
 }
-
-@media (max-width: 768px) {
+/* Testimony Form Modal */
+#testimonyForm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+#testimonyForm .modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 50%;
+}
+#testimonyForm .modal-content textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+#testimonyForm .close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+/* Responsive Design */
+@media (max-width: 1024px) {
   .container {
     flex-direction: column;
+    align-items: center;
   }
-
-  .testimony-item {
-    font-size: 1rem;
+  #left-section, #center-section, #right-section {
+    width: 90%; /* Full width on smaller screens */
+    margin-bottom: 1rem;
   }
-
+  header h1 {
+    font-size: 1.8rem;
+  }
+  nav {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 768px) {
+  header {
+    text-align: left;
+    padding: 0.5rem;
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  nav img {
+    margin-bottom: 0.5rem;
+  }
   button {
-    width: 100%;
+    width: 100%; /* Buttons span full width */
   }
-
-  .modal-content {
-    width: 90%;
+  #testimonyForm .modal-content {
+    width: 90%; /* Adjust modal size for small screens */
+  }
+  footer p {
+    font-size: 0.8rem;
   }
 }
