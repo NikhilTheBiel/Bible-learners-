@@ -7,33 +7,31 @@ body {
   color: #333;
 }
 
-/* Header and Navigation */
 header {
   background-color: #FAF9F6;  /* Updated header color */
   padding: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-header h1 {
-  margin: 0;
-  color: #333;
-}
-
-nav {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 0.5rem;
+  justify-content: space-between; /* Positions logo on the left, nav in center */
+  align-items: center;
 }
 
-nav a {
+header .logo {
+  /* Style for logo */
+}
+
+header nav {
+  display: flex;
+  gap: 1rem;
+}
+
+header nav a {
   color: #333;
   text-decoration: none;
   font-weight: bold;
 }
 
-nav a:hover {
+header nav a:hover {
   color: #ffeb3b; /* Yellow color on hover */
 }
 
