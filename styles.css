@@ -7,31 +7,33 @@ body {
   color: #333;
 }
 
+/* Header and Navigation */
 header {
   background-color: #FAF9F6;  /* Updated header color */
   padding: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between; /* Positions logo on the left, nav in center */
-  align-items: center;
+  text-align: center;
 }
 
-header .logo {
-  /* Style for logo */
+header h1 {
+  margin: 0;
+  color: #333;
 }
 
-header nav {
+nav {
   display: flex;
+  justify-content: center;
   gap: 1rem;
+  margin-top: 0.5rem;
 }
 
-header nav a {
+nav a {
   color: #333;
   text-decoration: none;
   font-weight: bold;
 }
 
-header nav a:hover {
+nav a:hover {
   color: #ffeb3b; /* Yellow color on hover */
 }
 
@@ -72,6 +74,7 @@ header nav a:hover {
 /* Footer */
 /* Footer */
 footer {
+  background-color: #D3D3D3;  /* Updated footer color */
   background-color: #ffffff ;  /* Updated footer color */
   color: #333;
   text-align: center;
