@@ -14,78 +14,60 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Tracks current testimonies being displayed
-let currentTestimonyIndex = 0;
-const testimoniesPerPage = 2;
-
-// Function to load testimonies from Firestore
-async function loadTestimonies() {
-  const testimonies = await fetchTestimonies();
+let currentTestimonyIndex = 0; // Tracks the current index of testimonies being displayed
+const testimoniesPerPage = 2; // Number of testimonies to display at a time
+// Function to load testimonies from localStorage
+function loadTestimonies() {
+  const testimonies = JSON.parse(localStorage.getItem("testimonies")) || [];
   const postList = document.getElementById("post-list");
 
   // Clear the list before loading to avoid duplicates
   postList.innerHTML = "";
 
+  // Display each testimony from localStorage
+  testimonies.forEach((testimony) => {
   // Display the first set of testimonies
   const testimoniesToShow = testimonies.slice(0, testimoniesPerPage);
   testimoniesToShow.forEach((testimony) => {
     const testimonyDiv = document.createElement("div");
     testimonyDiv.classList.add("testimony-item");
+    testimonyDiv.innerHTML = `<p>${testimony}</p>`;
     testimonyDiv.textContent = testimony;
     postList.appendChild(testimonyDiv);
   });
-
-  currentTestimonyIndex = testimoniesPerPage;
-  toggleShowMoreButton(testimonies.length);
+  currentTestimonyIndex = testimoniesPerPage; // Set index for the next load
+  toggleShowMoreButton(testimonies.length); // Adjust button visibility
 }
 
-// Fetch testimonies from Firestore
-async function fetchTestimonies() {
-  const testimonies = [];
-  const snapshot = await db.collection("testimonies").get();
-  snapshot.forEach((doc) => testimonies.push(doc.data().text));
-  return testimonies;
-}
-
-// Submit a new testimony to Firestore
-document.getElementById("submitTestimony").addEventListener("click", async function () {
-  const testimonyInput = document.getElementById("testimonyInput").value.trim();
-
-  if (testimonyInput.length < 500 || testimonyInput.length > 1000) {
-    alert("Please enter a testimony with 500 to 1000 characters.");
-    return;
-  }
-
-  // Add testimony to Firestore
-  await db.collection("testimonies").add({ text: testimonyInput });
-
-  // Clear the input field and reload testimonies
-  document.getElementById("testimonyInput").value = "";
-  loadTestimonies();
+// Show the testimony form when the button is clicked
+document.getElementById("testimonyButton").addEventListener("click", function () {
+  document.getElementById("testimonyForm").style.display = "block";
 });
-
-// Show more testimonies
-async function showMoreTestimonies() {
-  const testimonies = await fetchTestimonies();
+// Function to handle "Show More Testimonies" button click
+function showMoreTestimonies() {
+  const testimonies = JSON.parse(localStorage.getItem("testimonies")) || [];
   const postList = document.getElementById("post-list");
 
+// Close the testimony form when the close button is clicked
+document.querySelector(".close").addEventListener("click", function () {
+  document.getElementById("testimonyForm").style.display = "none";
+});
+  // Get the next set of testimonies
   const testimoniesToShow = testimonies.slice(
     currentTestimonyIndex,
     currentTestimonyIndex + testimoniesPerPage
   );
-
+  // Append new testimonies to the list
   testimoniesToShow.forEach((testimony) => {
     const testimonyDiv = document.createElement("div");
     testimonyDiv.classList.add("testimony-item");
     testimonyDiv.textContent = testimony;
     postList.appendChild(testimonyDiv);
   });
-
-  currentTestimonyIndex += testimoniesPerPage;
-  toggleShowMoreButton(testimonies.length);
+  currentTestimonyIndex += testimoniesPerPage; // Update index
+  toggleShowMoreButton(testimonies.length); // Adjust button visibility
 }
-
-// Toggle the "Show More" button
+// Toggle the visibility of the "Show More" button
 function toggleShowMoreButton(totalTestimonies) {
   const showMoreButton = document.getElementById("showMoreButton");
   if (currentTestimonyIndex >= totalTestimonies) {
@@ -95,11 +77,33 @@ function toggleShowMoreButton(totalTestimonies) {
   }
 }
 
+// Function to submit a new testimony
+document.getElementById("submitTestimony").addEventListener("click", function () {
+  const testimonyInput = document.getElementById("testimonyInput").value.trim();
+
+  // Validate testimony character count
+  if (testimonyInput.length < 500 || testimonyInput.length > 1000) {
+    alert("Please enter a testimony with at least 500 to 1000 characters.");
+    alert("Please enter a testimony with 500 to 1000 characters.");
+    return;
+  }
+
+  // Get existing testimonies from localStorage, add new one, and save back to localStorage
+  const testimonies = JSON.parse(localStorage.getItem("testimonies")) || [];
+  testimonies.push(testimonyInput);
+  localStorage.setItem("testimonies", JSON.stringify(testimonies));
+
+  // Reload the testimonies and clear the input field
+  loadTestimonies();
+  // Clear the input field and reload testimonies
+  document.getElementById("testimonyInput").value = "";
+  document.getElementById("testimonyForm").style.display = "none"; // Close the form
+  loadTestimonies();
+});
 // Open testimony form modal
 document.getElementById("testimonyButton").addEventListener("click", function () {
   document.getElementById("testimonyForm").style.display = "block";
 });
-
 // Close testimony form modal
 document.querySelector(".close").addEventListener("click", function () {
   document.getElementById("testimonyForm").style.display = "none";
@@ -107,6 +111,5 @@ document.querySelector(".close").addEventListener("click", function () {
 
 // Load testimonies on page load
 window.addEventListener("load", loadTestimonies);
-
 // Event listener for "Show More Testimonies" button
 document.getElementById("showMoreButton").addEventListener("click", showMoreTestimonies);
