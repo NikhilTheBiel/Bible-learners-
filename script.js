@@ -1,9 +1,24 @@
-let currentTestimonyIndex = 0; // Tracks the current index of testimonies being displayed
-const testimoniesPerPage = 2; // Number of testimonies to display at a time
+// Firebase Config (Replace with your Firebase project's config details)
+const firebaseConfig = {
+  apiKey: "AIzaSyCh-6zufkI1wn5hT9SdgyGINFjqv4PCPjs",
+  authDomain: "my-website-isgood1.firebaseapp.com",
+  projectId: "my-website-isgood1",
+  storageBucket: "my-website-isgood1.firebasestorage.app",
+  messagingSenderId: "710332167601",
+  appId: "1:710332167601:web:f162b4f40653abaf60f990",
+};
 
-// Function to load testimonies from localStorage
-function loadTestimonies() {
-  const testimonies = JSON.parse(localStorage.getItem("testimonies")) || [];
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+// Tracks current testimonies being displayed
+let currentTestimonyIndex = 0;
+const testimoniesPerPage = 2;
+
+// Function to load testimonies from Firestore
+async function loadTestimonies() {
+  const testimonies = await fetchTestimonies();
   const postList = document.getElementById("post-list");
 
   // Clear the list before loading to avoid duplicates
@@ -18,22 +33,45 @@ function loadTestimonies() {
     postList.appendChild(testimonyDiv);
   });
 
-  currentTestimonyIndex = testimoniesPerPage; // Set index for the next load
-  toggleShowMoreButton(testimonies.length); // Adjust button visibility
+  currentTestimonyIndex = testimoniesPerPage;
+  toggleShowMoreButton(testimonies.length);
 }
 
-// Function to handle "Show More Testimonies" button click
-function showMoreTestimonies() {
-  const testimonies = JSON.parse(localStorage.getItem("testimonies")) || [];
+// Fetch testimonies from Firestore
+async function fetchTestimonies() {
+  const testimonies = [];
+  const snapshot = await db.collection("testimonies").get();
+  snapshot.forEach((doc) => testimonies.push(doc.data().text));
+  return testimonies;
+}
+
+// Submit a new testimony to Firestore
+document.getElementById("submitTestimony").addEventListener("click", async function () {
+  const testimonyInput = document.getElementById("testimonyInput").value.trim();
+
+  if (testimonyInput.length < 500 || testimonyInput.length > 1000) {
+    alert("Please enter a testimony with 500 to 1000 characters.");
+    return;
+  }
+
+  // Add testimony to Firestore
+  await db.collection("testimonies").add({ text: testimonyInput });
+
+  // Clear the input field and reload testimonies
+  document.getElementById("testimonyInput").value = "";
+  loadTestimonies();
+});
+
+// Show more testimonies
+async function showMoreTestimonies() {
+  const testimonies = await fetchTestimonies();
   const postList = document.getElementById("post-list");
 
-  // Get the next set of testimonies
   const testimoniesToShow = testimonies.slice(
     currentTestimonyIndex,
     currentTestimonyIndex + testimoniesPerPage
   );
 
-  // Append new testimonies to the list
   testimoniesToShow.forEach((testimony) => {
     const testimonyDiv = document.createElement("div");
     testimonyDiv.classList.add("testimony-item");
@@ -41,11 +79,11 @@ function showMoreTestimonies() {
     postList.appendChild(testimonyDiv);
   });
 
-  currentTestimonyIndex += testimoniesPerPage; // Update index
-  toggleShowMoreButton(testimonies.length); // Adjust button visibility
+  currentTestimonyIndex += testimoniesPerPage;
+  toggleShowMoreButton(testimonies.length);
 }
 
-// Toggle the visibility of the "Show More" button
+// Toggle the "Show More" button
 function toggleShowMoreButton(totalTestimonies) {
   const showMoreButton = document.getElementById("showMoreButton");
   if (currentTestimonyIndex >= totalTestimonies) {
@@ -54,25 +92,6 @@ function toggleShowMoreButton(totalTestimonies) {
     showMoreButton.style.display = "block";
   }
 }
-
-// Function to submit a new testimony
-document.getElementById("submitTestimony").addEventListener("click", function () {
-  const testimonyInput = document.getElementById("testimonyInput").value.trim();
-
-  if (testimonyInput.length < 500 || testimonyInput.length > 1000) {
-    alert("Please enter a testimony with 500 to 1000 characters.");
-    return;
-  }
-
-  // Get existing testimonies from localStorage, add new one, and save back to localStorage
-  const testimonies = JSON.parse(localStorage.getItem("testimonies")) || [];
-  testimonies.push(testimonyInput);
-  localStorage.setItem("testimonies", JSON.stringify(testimonies));
-
-  // Clear the input field and reload testimonies
-  document.getElementById("testimonyInput").value = "";
-  loadTestimonies();
-});
 
 // Open testimony form modal
 document.getElementById("testimonyButton").addEventListener("click", function () {
