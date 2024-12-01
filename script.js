@@ -1,19 +1,3 @@
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-// Firebase Config (Replace with your Firebase project's config details)
-const firebaseConfig = {
-  apiKey: "AIzaSyCh-6zufkI1wn5hT9SdgyGINFjqv4PCPjs",
-  authDomain: "my-website-isgood1.firebaseapp.com",
-  projectId: "my-website-isgood1",
-  storageBucket: "my-website-isgood1.firebasestorage.app",
-  messagingSenderId: "710332167601",
-  appId: "1:710332167601:web:f162b4f40653abaf60f990",
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
 let currentTestimonyIndex = 0; // Tracks the current index of testimonies being displayed
 const testimoniesPerPage = 2; // Number of testimonies to display at a time
 // Function to load testimonies from localStorage
