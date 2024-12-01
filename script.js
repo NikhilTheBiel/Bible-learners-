@@ -1,3 +1,5 @@
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 // Firebase Config (Replace with your Firebase project's config details)
 const firebaseConfig = {
   apiKey: "AIzaSyCh-6zufkI1wn5hT9SdgyGINFjqv4PCPjs",
@@ -9,8 +11,8 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 // Tracks current testimonies being displayed
 let currentTestimonyIndex = 0;
